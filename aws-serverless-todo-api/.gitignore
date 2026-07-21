@@ -1,0 +1,15 @@
+node_modules/
+.aws-sam/
+*.log
+.env
+.DS_Store
+
+# Mobile app (Expo)
+mobile-app/node_modules/
+mobile-app/.expo/
+mobile-app/dist/
+mobile-app/web-build/
+mobile-app/android/
+mobile-app/ios/
+*.apk
+*.aab

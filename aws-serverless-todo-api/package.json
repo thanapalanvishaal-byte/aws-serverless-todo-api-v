@@ -1,0 +1,30 @@
+{
+  "name": "aws-serverless-todo-api",
+  "version": "1.0.0",
+  "description": "Serverless CRUD API for To-Do tasks with user isolation - AWS SAM",
+  "main": "index.js",
+  "scripts": {
+    "build": "sam build",
+    "start": "sam local start-api",
+    "deploy": "sam build && sam deploy --guided",
+    "deploy-ci": "sam build && sam deploy --no-confirm-changeset --no-fail-on-empty-changeset",
+    "delete": "sam delete",
+    "test": "sam local invoke"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.450.0",
+    "@aws-sdk/lib-dynamodb": "^3.450.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "serverless",
+    "aws",
+    "sam",
+    "lambda",
+    "dynamodb",
+    "api-gateway",
+    "crud"
+  ],
+  "license": "MIT"
+}

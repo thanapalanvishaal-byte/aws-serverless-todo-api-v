@@ -1,0 +1,39 @@
+### Variables
+@baseUrl = http://localhost:3000
+@userId = user-123e4567-e89b-12d3-a456-426614174000
+
+### Create a Task
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+X-User-Id: {{userId}}
+
+{
+  "title": "Complete AWS Serverless Project",
+  "description": "Build a CRUD API with Lambda, API Gateway, and DynamoDB"
+}
+
+### Get All Tasks (for this user)
+GET {{baseUrl}}/tasks
+X-User-Id: {{userId}}
+
+### Get Single Task (replace TASK_ID with actual ID from create response)
+GET {{baseUrl}}/tasks/TASK_ID
+X-User-Id: {{userId}}
+
+### Update a Task
+PUT {{baseUrl}}/tasks/TASK_ID
+Content-Type: application/json
+X-User-Id: {{userId}}
+
+{
+  "title": "Updated Task Title",
+  "completed": true
+}
+
+### Delete a Task
+DELETE {{baseUrl}}/tasks/TASK_ID
+X-User-Id: {{userId}}
+
+### Test with different user (should see empty list)
+GET {{baseUrl}}/tasks
+X-User-Id: different-user-456
