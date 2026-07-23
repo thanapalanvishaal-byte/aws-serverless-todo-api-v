@@ -98,19 +98,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  IconButton(
-                    icon: _submitting
-                        ? const SizedBox(
-                            width: 20,
-                            height: 20,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              color: AppColors.red,
-                            ),
-                          )
-                        : const Icon(Icons.add, color: AppColors.red, size: 30),
-                    onPressed: _handleAdd,
-                  ),
+                  GestureDetector(
+  onTap: _submitting ? null : _handleAdd,
+  child: Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: _submitting
+        ? const SizedBox(
+            width: 20,
+            height: 20,
+            child: CircularProgressIndicator(
+              strokeWidth: 2,
+              color: AppColors.red,
+            ),
+          )
+        : Text(
+            '+',
+            style: AppTextStyles.heading1(
+              color: AppColors.red,
+            ).copyWith(fontSize: 32, height: 1),
+          ),
+  ),
+),
                 ],
               ),
 

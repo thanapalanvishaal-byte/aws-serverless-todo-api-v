@@ -35,7 +35,7 @@ class TaskTile extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.delete, color: AppColors.pickleGreen),
+            icon: Image.asset('assets/images/trash_icon.png', width: 50, height: 50),
             onPressed: onDelete,
           ),
         ],
